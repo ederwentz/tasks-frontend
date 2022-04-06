@@ -51,7 +51,7 @@ public class TasksController {
 			restTemplate.postForObject(
 					getBackendURL() + ""
 							+ "", todo, Object.class);			
-			model.addAttribute("sucesso", "Sucesso!");
+			model.addAttribute("sucess", "Sucess!");
 			return "index";
 		} catch(Exception e) {
 			Pattern compile = Pattern.compile("message\":\"(.*)\",");
@@ -69,11 +69,10 @@ public class TasksController {
 	public String delete(@PathVariable Long id, Model model) {
 		RestTemplate restTemplate = new RestTemplate();
 		restTemplate.delete(getBackendURL() + "/tasks-backend/todo/" + id);			
-		model.addAttribute("success", "Success!");
+		model.addAttribute("sucess", "Sucess!");
 		model.addAttribute("todos", getTodos());
 		return "index";
 	}
-
 	
 	@SuppressWarnings("unchecked")
 	private List<Todo> getTodos() {
