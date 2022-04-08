@@ -49,8 +49,7 @@ public class TasksController {
 		try {
 			RestTemplate restTemplate = new RestTemplate();
 			restTemplate.postForObject(
-					getBackendURL() + ""
-							+ "", todo, Object.class);			
+					getBackendURL() + "/tasks-backend/todo", todo, Object.class);			
 			model.addAttribute("sucess", "Sucess!");
 			return "index";
 		} catch(Exception e) {
@@ -73,6 +72,7 @@ public class TasksController {
 		model.addAttribute("todos", getTodos());
 		return "index";
 	}
+
 	
 	@SuppressWarnings("unchecked")
 	private List<Todo> getTodos() {
