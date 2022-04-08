@@ -51,7 +51,7 @@ public class TasksController {
 			restTemplate.postForObject(
 					getBackendURL() + ""
 							+ "", todo, Object.class);			
-			model.addAttribute("success", "Success!");
+			model.addAttribute("sucess", "Sucess!");
 			return "index";
 		} catch(Exception e) {
 			Pattern compile = Pattern.compile("message\":\"(.*)\",");
